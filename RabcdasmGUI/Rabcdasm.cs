@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MetroFramework.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,18 +12,19 @@ using System.Windows.Forms;
 
 namespace RabcdasmGUI
 {
-    public partial class Rabcdasm : Form
+    public partial class RABCDasm : MetroForm
     {
         string filepath;
         string path;
         string filename;
         string tag = "0";
-        public Rabcdasm()
+        public RABCDasm()
         {
             InitializeComponent();
             filepath = "";
             filename = "";
             path = "";
+            this.StyleManager = msmMain;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -30,7 +32,7 @@ namespace RabcdasmGUI
             openFileDialog.Title = "Pick SWF file";
             openFileDialog.Filter = "SWF files | *.swf";
             openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            domainUpDown1.SelectedIndex = 0;
+            metroComboBox1.SelectedIndex = 0;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,11 +91,6 @@ namespace RabcdasmGUI
             }
         }
 
-        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
-        {
-            tag = (string)domainUpDown1.SelectedItem;
-        }
-
         private void rabcasmButton(object sender, EventArgs e)
         {
             if (filepath != "")
@@ -136,6 +133,11 @@ namespace RabcdasmGUI
             {
                 InfoLabel.Text = "Select an SWF file first!";
             }
+        }
+
+        private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            tag = (string)metroComboBox1.SelectedItem;
         }
     }
 }

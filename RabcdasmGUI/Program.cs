@@ -16,7 +16,7 @@ namespace RabcdasmGUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Rabcdasm());
+            Application.Run(new RABCDasm());
         }
     }
 }
