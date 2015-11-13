@@ -35,7 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.InfoLabel = new System.Windows.Forms.Label();
             this.domainUpDown1 = new System.Windows.Forms.DomainUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -105,11 +105,11 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 93);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 8;
+            this.InfoLabel.AutoSize = true;
+            this.InfoLabel.Location = new System.Drawing.Point(12, 93);
+            this.InfoLabel.Name = "label1";
+            this.InfoLabel.Size = new System.Drawing.Size(0, 13);
+            this.InfoLabel.TabIndex = 8;
             // 
             // domainUpDown1
             // 
@@ -143,7 +143,7 @@
             this.ClientSize = new System.Drawing.Size(400, 116);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.domainUpDown1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button3);
@@ -167,7 +167,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label InfoLabel;
         private System.Windows.Forms.DomainUpDown domainUpDown1;
         private System.Windows.Forms.Label label2;
 

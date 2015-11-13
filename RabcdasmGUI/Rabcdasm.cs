@@ -43,7 +43,7 @@ namespace RabcdasmGUI
                 filepath = file;
                 filename = openFileDialog.SafeFileName;
                 path = filepath.Replace(filename, "");
-                label1.Text = filename;
+                InfoLabel.Text = "Selected: " + filename;
             }
         }
 
@@ -58,10 +58,20 @@ namespace RabcdasmGUI
             {
                 string abcpath = path + filename.Replace(".swf", "-" + tag + ".abc");
                 if (File.Exists(abcpath))
-                { 
+                {
+                    InfoLabel.Text = "Dissassembling " + filename.Replace(".swf", "-" + tag + ".abc") + "...";
                     ToolLauncher.Rabcdasm(abcpath);
+                    InfoLabel.Text = "Dissassembled " + filename.Replace(".swf", "-" + tag + ".abc") + " in /" + filename.Replace(".swf", "-" + tag) + "/";
+                } 
+                else
+                {
+                    InfoLabel.Text = "The ABC block " + filename.Replace(".swf", "-" + tag + ".abc") + " was not found";
                 }
-                
+
+            }
+            else 
+            {
+                InfoLabel.Text = "Select an SWF file first!";
             }
         }
 
@@ -69,7 +79,13 @@ namespace RabcdasmGUI
         {
             if (filepath != "")
             {
+                InfoLabel.Text = "Exporting ABC tags...";
                 ToolLauncher.AbcExport(filepath);
+                InfoLabel.Text = "Exported ABC tags";
+            }
+            else
+            {
+                InfoLabel.Text = "Select an SWF file first!";
             }
         }
 
@@ -85,8 +101,18 @@ namespace RabcdasmGUI
                 string buildpath = path + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.asasm";
                 if (File.Exists(buildpath))
                 {
+                    InfoLabel.Text = "Reassassembling " + filename.Replace(".swf", "-" + tag + ".abc") + "...";
                     ToolLauncher.Rabcasm(buildpath);
+                    InfoLabel.Text = "Reassembled " + filename.Replace(".swf", "-" + tag + ".abc") + " in /" + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.abc";;
                 }
+                else
+                {
+                    InfoLabel.Text = "The build file /" + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.asasm" +" was not found";
+                }
+            }
+            else
+            {
+                InfoLabel.Text = "Select an SWF file first!";
             }
         }
 
@@ -97,8 +123,18 @@ namespace RabcdasmGUI
                 string buildpath = path + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.abc";
                 if (File.Exists(buildpath))
                 {
+                    InfoLabel.Text = "Reinserting ABC block...";
                     ToolLauncher.AbcReplace(filepath, tag, buildpath);
+                    InfoLabel.Text = "ABC block inserted";
                 }
+                else
+                {
+                    InfoLabel.Text = "The ABC block /" + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.abc" + " was not found";
+                }
+            }
+            else
+            {
+                InfoLabel.Text = "Select an SWF file first!";
             }
         }
     }
