@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,7 +57,11 @@ namespace RabcdasmGUI
             if (filepath != "")
             {
                 string abcpath = path + filename.Replace(".swf", "-" + tag + ".abc");
-                ToolLauncher.Rabcdasm(abcpath);
+                if (File.Exists(abcpath))
+                { 
+                    ToolLauncher.Rabcdasm(abcpath);
+                }
+                
             }
         }
 
@@ -71,6 +76,30 @@ namespace RabcdasmGUI
         private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
         {
             tag = (string)domainUpDown1.SelectedItem;
+        }
+
+        private void rabcasmButton(object sender, EventArgs e)
+        {
+            if (filepath != "")
+            {
+                string buildpath = path + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.asasm";
+                if (File.Exists(buildpath))
+                {
+                    ToolLauncher.Rabcasm(buildpath);
+                }
+            }
+        }
+
+        private void AbcReplaceButton(object sender, EventArgs e)
+        {
+            if (filepath != "")
+            {
+                string buildpath = path + filename.Replace(".swf", "-" + tag) + "/" + filename.Replace(".swf", "-" + tag) + ".main.abc";
+                if (File.Exists(buildpath))
+                {
+                    ToolLauncher.AbcReplace(filepath, tag, buildpath);
+                }
+            }
         }
     }
 }
