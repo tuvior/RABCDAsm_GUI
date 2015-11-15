@@ -108,7 +108,7 @@ namespace RabcdasmGUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(145, 74);
+            this.button3.Location = new System.Drawing.Point(145, 44);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 24);
             this.button3.TabIndex = 3;
@@ -128,7 +128,7 @@ namespace RabcdasmGUI
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(145, 44);
+            this.button6.Location = new System.Drawing.Point(145, 74);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(139, 24);
             this.button6.TabIndex = 6;
@@ -215,7 +215,7 @@ namespace RabcdasmGUI
             this.Binaries.HorizontalScrollbarSize = 10;
             this.Binaries.Location = new System.Drawing.Point(4, 38);
             this.Binaries.Name = "Binaries";
-            this.Binaries.Size = new System.Drawing.Size(383, 129);
+            this.Binaries.Size = new System.Drawing.Size(383, 136);
             this.Binaries.TabIndex = 1;
             this.Binaries.Text = "Binaries";
             this.Binaries.VerticalScrollbarBarColor = true;
