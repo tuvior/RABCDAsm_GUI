@@ -1,7 +1,7 @@
 # RABCDAsmGUI
 A simple user interface for RABCDAsm
 
-![mainwindow](http://puu.sh/lmQTe.png "Main Window")
+![mainwindow](http://puu.sh/lmRf1.png "Main Window")
 
 -------
 
