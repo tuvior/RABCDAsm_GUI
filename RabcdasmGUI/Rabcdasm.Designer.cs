@@ -44,7 +44,12 @@ namespace RabcdasmGUI
             this.label2 = new MetroFramework.Controls.MetroLabel();
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
             this.tagSelector = new MetroFramework.Controls.MetroComboBox();
+            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
+            this.Assembler = new MetroFramework.Controls.MetroTabPage();
+            this.Binaries = new MetroFramework.Controls.MetroTabPage();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
+            this.metroTabControl1.SuspendLayout();
+            this.Assembler.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -63,7 +68,7 @@ namespace RabcdasmGUI
             this.textBox1.CustomButton.Visible = false;
             this.textBox1.Enabled = false;
             this.textBox1.Lines = new string[0];
-            this.textBox1.Location = new System.Drawing.Point(23, 63);
+            this.textBox1.Location = new System.Drawing.Point(0, 18);
             this.textBox1.MaxLength = 32767;
             this.textBox1.Name = "textBox1";
             this.textBox1.PasswordChar = '\0';
@@ -79,7 +84,7 @@ namespace RabcdasmGUI
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(313, 63);
+            this.button1.Location = new System.Drawing.Point(290, 18);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(84, 20);
             this.button1.TabIndex = 1;
@@ -93,7 +98,7 @@ namespace RabcdasmGUI
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(23, 94);
+            this.button2.Location = new System.Drawing.Point(0, 44);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(139, 24);
             this.button2.TabIndex = 2;
@@ -103,7 +108,7 @@ namespace RabcdasmGUI
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(168, 94);
+            this.button3.Location = new System.Drawing.Point(145, 74);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(139, 24);
             this.button3.TabIndex = 3;
@@ -113,7 +118,7 @@ namespace RabcdasmGUI
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(23, 124);
+            this.button5.Location = new System.Drawing.Point(0, 74);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(139, 24);
             this.button5.TabIndex = 5;
@@ -123,7 +128,7 @@ namespace RabcdasmGUI
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(168, 124);
+            this.button6.Location = new System.Drawing.Point(145, 44);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(139, 24);
             this.button6.TabIndex = 6;
@@ -134,7 +139,7 @@ namespace RabcdasmGUI
             // InfoLabel
             // 
             this.InfoLabel.AutoSize = true;
-            this.InfoLabel.Location = new System.Drawing.Point(23, 160);
+            this.InfoLabel.Location = new System.Drawing.Point(0, 113);
             this.InfoLabel.Name = "InfoLabel";
             this.InfoLabel.Size = new System.Drawing.Size(64, 19);
             this.InfoLabel.TabIndex = 8;
@@ -143,7 +148,7 @@ namespace RabcdasmGUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 94);
+            this.label2.Location = new System.Drawing.Point(305, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 19);
             this.label2.TabIndex = 10;
@@ -161,7 +166,7 @@ namespace RabcdasmGUI
             this.tagSelector.ItemHeight = 23;
             this.tagSelector.Items.AddRange(new object[] {
             "-"});
-            this.tagSelector.Location = new System.Drawing.Point(327, 119);
+            this.tagSelector.Location = new System.Drawing.Point(305, 69);
             this.tagSelector.Name = "tagSelector";
             this.tagSelector.Size = new System.Drawing.Size(59, 29);
             this.tagSelector.Sorted = true;
@@ -169,20 +174,60 @@ namespace RabcdasmGUI
             this.tagSelector.UseSelectable = true;
             this.tagSelector.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
+            // metroTabControl1
+            // 
+            this.metroTabControl1.Controls.Add(this.Assembler);
+            this.metroTabControl1.Controls.Add(this.Binaries);
+            this.metroTabControl1.Location = new System.Drawing.Point(10, 53);
+            this.metroTabControl1.Name = "metroTabControl1";
+            this.metroTabControl1.SelectedIndex = 0;
+            this.metroTabControl1.Size = new System.Drawing.Size(391, 178);
+            this.metroTabControl1.TabIndex = 12;
+            this.metroTabControl1.UseSelectable = true;
+            // 
+            // Assembler
+            // 
+            this.Assembler.Controls.Add(this.tagSelector);
+            this.Assembler.Controls.Add(this.InfoLabel);
+            this.Assembler.Controls.Add(this.button3);
+            this.Assembler.Controls.Add(this.label2);
+            this.Assembler.Controls.Add(this.button5);
+            this.Assembler.Controls.Add(this.button2);
+            this.Assembler.Controls.Add(this.textBox1);
+            this.Assembler.Controls.Add(this.button6);
+            this.Assembler.Controls.Add(this.button1);
+            this.Assembler.HorizontalScrollbarBarColor = true;
+            this.Assembler.HorizontalScrollbarHighlightOnWheel = false;
+            this.Assembler.HorizontalScrollbarSize = 10;
+            this.Assembler.Location = new System.Drawing.Point(4, 38);
+            this.Assembler.Name = "Assembler";
+            this.Assembler.Size = new System.Drawing.Size(383, 136);
+            this.Assembler.TabIndex = 0;
+            this.Assembler.Text = "Source";
+            this.Assembler.VerticalScrollbarBarColor = true;
+            this.Assembler.VerticalScrollbarHighlightOnWheel = false;
+            this.Assembler.VerticalScrollbarSize = 10;
+            // 
+            // Binaries
+            // 
+            this.Binaries.HorizontalScrollbarBarColor = true;
+            this.Binaries.HorizontalScrollbarHighlightOnWheel = false;
+            this.Binaries.HorizontalScrollbarSize = 10;
+            this.Binaries.Location = new System.Drawing.Point(4, 38);
+            this.Binaries.Name = "Binaries";
+            this.Binaries.Size = new System.Drawing.Size(383, 129);
+            this.Binaries.TabIndex = 1;
+            this.Binaries.Text = "Binaries";
+            this.Binaries.VerticalScrollbarBarColor = true;
+            this.Binaries.VerticalScrollbarHighlightOnWheel = false;
+            this.Binaries.VerticalScrollbarSize = 10;
+            // 
             // RABCDasm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 199);
-            this.Controls.Add(this.tagSelector);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.InfoLabel);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(408, 243);
+            this.Controls.Add(this.metroTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "RABCDasm";
@@ -190,8 +235,10 @@ namespace RabcdasmGUI
             this.Text = "RABCDAsm";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
+            this.metroTabControl1.ResumeLayout(false);
+            this.Assembler.ResumeLayout(false);
+            this.Assembler.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -208,6 +255,9 @@ namespace RabcdasmGUI
         private MetroLabel label2;
         private MetroFramework.Components.MetroStyleManager msmMain;
         private MetroComboBox tagSelector;
+        private MetroTabControl metroTabControl1;
+        private MetroTabPage Assembler;
+        private MetroTabPage Binaries;
 
     }
 }
