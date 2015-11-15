@@ -32,6 +32,7 @@ namespace RabcdasmGUI
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RABCDasm));
             this.textBox1 = new MetroFramework.Controls.MetroTextBox();
             this.button1 = new MetroFramework.Controls.MetroButton();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
@@ -143,7 +144,7 @@ namespace RabcdasmGUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 94);
+            this.label2.Location = new System.Drawing.Point(327, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 19);
             this.label2.TabIndex = 10;
@@ -165,7 +166,7 @@ namespace RabcdasmGUI
             "2",
             "3",
             "4"});
-            this.metroComboBox1.Location = new System.Drawing.Point(326, 119);
+            this.metroComboBox1.Location = new System.Drawing.Point(327, 119);
             this.metroComboBox1.Name = "metroComboBox1";
             this.metroComboBox1.Size = new System.Drawing.Size(59, 29);
             this.metroComboBox1.Sorted = true;
@@ -187,7 +188,10 @@ namespace RabcdasmGUI
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RABCDasm";
+            this.Resizable = false;
             this.Text = "RABCDAsm";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).EndInit();
