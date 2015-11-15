@@ -43,7 +43,7 @@ namespace RabcdasmGUI
             this.InfoLabel = new MetroFramework.Controls.MetroLabel();
             this.label2 = new MetroFramework.Controls.MetroLabel();
             this.msmMain = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.tagSelector = new MetroFramework.Controls.MetroComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.msmMain)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,12 +85,11 @@ namespace RabcdasmGUI
             this.button1.TabIndex = 1;
             this.button1.Text = "Browse";
             this.button1.UseSelectable = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.browseClick);
             // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog1";
-            this.openFileDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // button2
             // 
@@ -156,30 +155,26 @@ namespace RabcdasmGUI
             this.msmMain.Style = MetroFramework.MetroColorStyle.Purple;
             this.msmMain.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroComboBox1
+            // tagSelector
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.metroComboBox1.Location = new System.Drawing.Point(327, 119);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(59, 29);
-            this.metroComboBox1.Sorted = true;
-            this.metroComboBox1.TabIndex = 11;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            this.tagSelector.FormattingEnabled = true;
+            this.tagSelector.ItemHeight = 23;
+            this.tagSelector.Items.AddRange(new object[] {
+            "-"});
+            this.tagSelector.Location = new System.Drawing.Point(327, 119);
+            this.tagSelector.Name = "tagSelector";
+            this.tagSelector.Size = new System.Drawing.Size(59, 29);
+            this.tagSelector.Sorted = true;
+            this.tagSelector.TabIndex = 11;
+            this.tagSelector.UseSelectable = true;
+            this.tagSelector.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // RABCDasm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 199);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.tagSelector);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.button6);
@@ -212,7 +207,7 @@ namespace RabcdasmGUI
         private MetroTextBox textBox1;
         private MetroLabel label2;
         private MetroFramework.Components.MetroStyleManager msmMain;
-        private MetroComboBox metroComboBox1;
+        private MetroComboBox tagSelector;
 
     }
 }
