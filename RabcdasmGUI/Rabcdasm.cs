@@ -27,15 +27,32 @@ namespace RabcdasmGUI
             this.StyleManager = msmMain;
         }
 
+        private void getABC()
+        {
+            string search = filename.Replace(".swf", "") + "-*.abc";
+            string[] tags = Directory.GetFiles(path, search);
+
+            object [] tagList = new object[tags.Length];
+
+            for (int i = 0; i < tags.Length; i++)
+            {
+                tagList[i] = i;
+            }
+
+            tagSelector.Items.Clear();
+            tagSelector.Items.AddRange(tagList);
+            tagSelector.SelectedIndex = 0;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             openFileDialog.Title = "Pick SWF file";
             openFileDialog.Filter = "SWF files | *.swf";
             openFileDialog.InitialDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            metroComboBox1.SelectedIndex = 0;
+            tagSelector.SelectedIndex = 0;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void browseClick(object sender, EventArgs e)
         {
             DialogResult result = openFileDialog.ShowDialog(); 
             if (result == DialogResult.OK) 
@@ -46,12 +63,8 @@ namespace RabcdasmGUI
                 filename = openFileDialog.SafeFileName;
                 path = filepath.Replace(filename, "");
                 InfoLabel.Text = "Selected: " + filename;
+                getABC();
             }
-        }
-
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            
         }
 
         private void rabcdasmButton(object sender, EventArgs e)
@@ -84,6 +97,7 @@ namespace RabcdasmGUI
                 InfoLabel.Text = "Exporting ABC tags...";
                 ToolLauncher.AbcExport(filepath);
                 InfoLabel.Text = "Exported ABC tags";
+                getABC();
             }
             else
             {
@@ -137,7 +151,7 @@ namespace RabcdasmGUI
 
         private void metroComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            tag = (string)metroComboBox1.SelectedItem;
+            tag = tagSelector.SelectedItem + "";
         }
     }
 }
