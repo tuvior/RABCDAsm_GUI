@@ -10,3 +10,4 @@ A simple user interface for RABCDAsm
 * [x] get ABC blocks dynamically
 * [x] add tabbed functionality
 * [ ] bin handling
+* [ ] compression / decompression
